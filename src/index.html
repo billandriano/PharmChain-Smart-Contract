@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaChain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>PharmaChain Dashboard</h1>
+
+    <div class="container">
+        <label for="accountSelect">Select Account:</label>
+        <select id="accountSelect"></select>
+    </div>
+
+    <div class="container">
+        <h2>Add Product</h2>
+        <form id="addProductForm">
+            <input type="text" id="productName" placeholder="Product Name" required>
+            <input type="text" id="manufacturer" placeholder="Manufacturer" required>
+            <input type="number" id="quantity" placeholder="Quantity" required>
+            <input type="text" id="origin" placeholder="Origin" required>
+            <input type="text" id="destination" placeholder="Destination" required>
+            <input type="date" id="dateOfDeparture" placeholder="Date of Departure" required>
+            <input type="date" id="expectedArrivalDate" placeholder="Expected Arrival Date" required>
+            <select id="status" required>
+                <option value="Created">Created</option>
+                <option value="Shipped">Shipped</option>
+                <option value="InTransit">In Transit</option>
+                <option value="Delivered">Delivered</option>
+            </select>
+            <button type="submit">Add Product</button>
+        </form>
+        <div id="addProductStatus" class="status-message"></div>
+    </div>
+
+    <div class="container">
+        <h2>Update Product Location</h2>
+        <form id="updateProductForm">
+            <input type="text" id="updateProductId" placeholder="Product ID" required>
+            <input type="text" id="updateOrigin" placeholder="Origin" required>
+            <input type="text" id="updateDestination" placeholder="Destination" required>
+            <input type="date" id="updateDateOfDeparture" placeholder="Date of Departure" required>
+            <input type="date" id="updateExpectedArrivalDate" placeholder="Expected Arrival Date" required>
+            <select id="updateStatus" required>
+                <option value="Created">Created</option>
+                <option value="Shipped">Shipped</option>
+                <option value="InTransit">In Transit</option>
+                <option value="Delivered">Delivered</option>
+            </select>
+            <button type="submit">Update Location</button>
+        </form>
+        <div id="updateProductStatus" class="status-message"></div>
+    </div>
+
+    <div class="container">
+        <h2>Get Product Details</h2>
+        <form id="getProductForm">
+            <input type="text" id="getProductId" placeholder="Product ID" required>
+            <button type="submit">Get Details</button>
+        </form>
+        <pre id="productDetails"></pre>
+        <div id="getProductStatus" class="status-message"></div>
+    </div>
+
+    <div class="container">
+        <h2>Add User</h2>
+        <form id="addUserForm">
+            <input type="text" id="userAddress" placeholder="User Address" required>
+            <select id="userRole" required>
+                <option value="0">Admin</option>
+                <option value="1">Supplier</option>
+                <option value="2">Logistic Employee</option>
+                <option value="3">Inspector</option>
+            </select>
+            <button type="submit">Add User</button>
+        </form>
+        <div id="addUserStatus" class="status-message"></div>
+    </div>
+
+    <div class="container">
+        <h2>Remove User</h2>
+        <form id="removeUserForm">
+            <input type="text" id="removeUserAddress" placeholder="User Address" required>
+            <button type="submit">Remove User</button>
+        </form>
+        <div id="removeUserStatus" class="status-message"></div>
+    </div>
+
+    <div class="container">
+        <h2>Add Location</h2>
+        <form id="addLocationForm">
+            <input type="text" id="locationName" placeholder="Location Name" required>
+            <button type="submit">Add Location</button>
+        </form>
+        <div id="addLocationStatus" class="status-message"></div>
+    </div>
+
+    <div class="container">
+        <h2>Remove Location</h2>
+        <form id="removeLocationForm">
+            <input type="text" id="removeLocationName" placeholder="Location Name" required>
+            <button type="submit">Remove Location</button>
+        </form>
+        <div id="removeLocationStatus" class="status-message"></div>
+    </div>
+
+    <div class="container">
+        <h2>Get All Locations</h2>
+        <button id="getAllLocationsButton">Get All Locations</button>
+        <pre id="allLocations"></pre>
+        <div id="getAllLocationsStatus" class="status-message"></div>
+    </div>
+
+    <div class="container">
+        <h2>Get Product History</h2>
+        <form id="getProductHistoryForm">
+            <input type="text" id="getProductHistoryId" placeholder="Product ID" required>
+            <button type="submit">Get History</button>
+        </form>
+        <pre id="productHistory"></pre>
+        <div id="getProductHistoryStatus" class="status-message"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
